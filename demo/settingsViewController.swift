@@ -9,15 +9,41 @@
 import UIKit
 
 class settingsViewController: UIViewController {
+    
+    @objc func segmentedValueChanged(_ sender:UISegmentedControl!)
+    {
+        switch sender.selectedSegmentIndex
+        {
+        case 0:
+            print("hola")
+        case 1:
+            print("hola")
+        case 2:
+            print("hola")
+        default:
+            break
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let retButton = UIButton(frame: CGRect(x: 16, y: 36, width: 45, height: 45))
-        retButton.backgroundColor = .black
-        retButton.setTitle("RET", for: .normal)
+        let retButton = UIButton(frame: CGRect(x: 10, y: 10, width: 45, height: 45))
+        retButton.setImage(UIImage(named: "back.png"), for: .normal)
         retButton.addTarget(self, action:#selector(returnPressed), for: .touchUpInside)
         self.view.addSubview(retButton)
+        
+        //CREAR EL SEGMENTED CONTROL
+        let sizes = ["Small", "Medium", "Big"]
+        let control = UISegmentedControl(items: sizes)
+        control.selectedSegmentIndex = 0
+        
+        //SET UP DEL FRAME
+        control.frame = CGRect(x: 368, y: 59, width: 237, height: 28)
+         control.addTarget(self, action: #selector(settingsViewController.segmentedValueChanged(_:)), for: .valueChanged)
+        self.view.addSubview(control)
+        
+        
         
     }
 
@@ -32,15 +58,5 @@ class settingsViewController: UIViewController {
         self.present(ret, animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

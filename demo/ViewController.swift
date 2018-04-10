@@ -11,21 +11,21 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
+    
 
     @objc func retPressed(ender: UIButton) {
         let ret = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! menuViewController
         self.present(ret, animated: true, completion: nil)
     }
+    
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        super.viewDidLoad()
         
-        let retButton = UIButton(frame: CGRect(x: 16, y: 36, width: 45, height: 45))
-        retButton.backgroundColor = .black
-        retButton.setTitle("RET", for: .normal)
+        let retButton = UIButton(frame: CGRect(x: 10, y: 10, width: 45, height: 45))
+        retButton.setImage(UIImage(named: "back.png"), for: .normal)
         retButton.addTarget(self, action:#selector(retPressed), for: .touchUpInside)
         self.view.addSubview(retButton)
         
