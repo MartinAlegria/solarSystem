@@ -12,6 +12,8 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
+    let userDef = UserDefaults.standard
+    
 
     @objc func retPressed(ender: UIButton) {
         let ret = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! menuViewController
@@ -23,6 +25,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let sizeValue = userDef.object(forKey: "sizeValue") as? Int
+        
+        switch sizeValue {
+        case 0:
+            print("Es 0")
+            break;
+            
+        case 1:
+            setUpPlanetsMED()
+            break;
+            
+        case 2:
+            setUpPlanetsBIG()
+            break;
+            
+        default:
+            print("lol")
+        }
+        
         
         let retButton = UIButton(frame: CGRect(x: 10, y: 10, width: 45, height: 45))
         retButton.setImage(UIImage(named: "back.png"), for: .normal)
@@ -33,6 +54,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
 
+        
+    }
+    
+    func setUpPlanetsBIG(){
         let sun = SCNSphere(radius: 10) //BIG: 10
         let sunMaterial = SCNMaterial()
         
@@ -130,13 +155,137 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene.rootNode.addChildNode(saturnNode)
         
         let rings = SCNTorus(ringRadius: 3.2, pipeRadius:0.2) // BIG: (ringRadius: 3.2, pipeRadius:0.2)
-        
+        let ringMat = SCNMaterial()
+        ringMat.diffuse.contents = UIImage(named: "art.scnassets/rings.jpg")
+        rings.materials = [ringMat]
         let ringsNode = SCNNode()
         ringsNode.position = SCNVector3(x:-14, y: 0, z: -0.5)//BIG: (x:-14, y: 0, z: -0.5)
         ringsNode.geometry = rings
         sceneView.scene.rootNode.addChildNode(ringsNode)
         
-      
+        //URANUS
+        let uranus = SCNSphere(radius: 1.86) //BIG: 1.84
+        let uranusMat = SCNMaterial()
+        
+        uranusMat.diffuse.contents = UIImage(named: "art.scnassets/uranus.jpg")
+        uranus.materials = [uranusMat]
+        
+        let uranusNode = SCNNode()
+        uranusNode.position = SCNVector3(x:-14, y: 0, z: -0.5)//BIG:(x:-14, y: 0, z: -0.5)
+        uranusNode.geometry = saturn
+        sceneView.scene.rootNode.addChildNode(uranusNode)
+        
+        
+        sceneView.autoenablesDefaultLighting = true
+    }
+    
+    func setUpPlanetsMED(){
+        let sun = SCNSphere(radius: 0.3) //BIG: 10
+        let sunMaterial = SCNMaterial()
+        
+        sunMaterial.diffuse.contents = UIImage(named: "art.scnassets/sun.jpg")
+        sun.materials = [sunMaterial]
+        
+        let sunNode = SCNNode()
+        sunNode.position = SCNVector3(x:1, y: 0, z: -0.12) //BIG: 10 (x:15, y: 0, z: -0.5
+        sunNode.geometry = sun
+        sceneView.scene.rootNode.addChildNode(sunNode)
+        
+        //Mercury
+        let mercury = SCNSphere(radius: 0.0175) //BIG: 0.07
+        let mercuryMaterial = SCNMaterial()
+        
+        mercuryMaterial.diffuse.contents = UIImage(named: "art.scnassets/mercury.jpg")
+        mercury.materials = [mercuryMaterial]
+        
+        let mercuryNode = SCNNode()
+        mercuryNode.position = SCNVector3(x:0.375, y: 0, z: 0) //BIG (x:2, y: 0, z: -0.5)
+        mercuryNode.geometry = mercury
+        sceneView.scene.rootNode.addChildNode(mercuryNode)
+        
+        //Venus
+        let venus = SCNSphere(radius: 0.0495) //BIG = 0.198
+        let venusMaterial = SCNMaterial()
+        
+        venusMaterial.diffuse.contents = UIImage(named: "art.scnassets/venus.jpg")
+        venus.materials = [venusMaterial]
+        
+        let venusNode = SCNNode()
+        venusNode.position = SCNVector3(x:0.2, y: 0, z: -0.05) //BIG: (x:1, y: 0, z: -0.5)
+        venusNode.geometry = venus
+        sceneView.scene.rootNode.addChildNode(venusNode)
+        
+        //Earth
+        let earth = SCNSphere(radius: 0.05) //BIG: 0.2
+        let earthMaterial = SCNMaterial()
+        
+        earthMaterial.diffuse.contents = UIImage(named: "art.scnassets/earth.jpg")
+        earth.materials = [earthMaterial]
+        
+        let earthNode = SCNNode()
+        earthNode.position = SCNVector3(x:0, y: 0, z: -0.05) //BIG: (x:0, y: 0, z: -0.5)
+        earthNode.geometry = earth
+        sceneView.scene.rootNode.addChildNode(earthNode)
+        
+        //Moon
+        let moon = SCNSphere(radius: 0.0125) //BIG: 0.05
+        let moonMaterial = SCNMaterial()
+        
+        moonMaterial.diffuse.contents = UIImage(named: "art.scnassets/moon.jpg")
+        moon.materials = [moonMaterial]
+        
+        let moonNode = SCNNode()
+        moonNode.position = SCNVector3(x:0, y:0, z :0.05) // BIG: (x:0, y:0, z :0)
+        moonNode.geometry = moon
+        
+        sceneView.scene.rootNode.addChildNode(moonNode)
+        
+        //Mars
+        let mars = SCNSphere(radius: 0.026) //BIG: (radius: 0.104)
+        let marsMaterial = SCNMaterial()
+        
+        marsMaterial.diffuse.contents = UIImage(named: "art.scnassets/mars.jpg")
+        mars.materials = [marsMaterial]
+        
+        let marsNode = SCNNode()
+        marsNode.position = SCNVector3(x:-0.175, y: 0, z: 0) //BIG: (x:-1, y: 0, z: -0.5)
+        marsNode.geometry = mars
+        sceneView.scene.rootNode.addChildNode(marsNode)
+        
+        //Jupyter
+        let jupiter = SCNSphere(radius: 0.2)// BIG: (radius: 2.25)
+        let jupiterMat = SCNMaterial()
+        
+        jupiterMat.diffuse.contents = UIImage(named: "art.scnassets/jupyter.jpg")
+        jupiter.materials = [jupiterMat]
+        
+        let jupiterNode = SCNNode()
+        jupiterNode.position = SCNVector3(x:-0.5, y: 0, z: -0.1) //BIG: (x:-5, y: 0, z: -0.5)
+        jupiterNode.geometry = jupiter
+        sceneView.scene.rootNode.addChildNode(jupiterNode)
+        
+        //Saturn
+        let saturn = SCNSphere(radius: 0.16) //BIG: 1.84
+        let saturnMat = SCNMaterial()
+        
+        saturnMat.diffuse.contents = UIImage(named: "art.scnassets/saturn.jpg")
+        saturn.materials = [saturnMat]
+        
+        let saturnNode = SCNNode()
+        saturnNode.position = SCNVector3(x:-1.2, y: 0, z: -0.06)//BIG:(x:-14, y: 0, z: -0.5)
+        saturnNode.geometry = saturn
+        sceneView.scene.rootNode.addChildNode(saturnNode)
+        
+        let rings = SCNTorus(ringRadius: 0.3, pipeRadius: 0.018) // BIG: (ringRadius: 3.2, pipeRadius:0.2)
+        let ringMat = SCNMaterial()
+        ringMat.diffuse.contents = UIImage(named: "art.scnassets/rings.jpg")
+        rings.materials = [ringMat]
+        let ringsNode = SCNNode()
+        ringsNode.position = SCNVector3(x:-1.2, y: 0, z: -0.06)//BIG: (x:-14, y: 0, z: -0.5)
+        ringsNode.geometry = rings
+        sceneView.scene.rootNode.addChildNode(ringsNode)
+        
+        
         sceneView.autoenablesDefaultLighting = true
     }
     

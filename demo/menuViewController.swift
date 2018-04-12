@@ -28,13 +28,13 @@ class menuViewController: UIViewController {
         
         
         //CREAR BOTON DE PLAY
-        let playButton = UIButton(frame: CGRect(x: 26, y: 197, width: 240, height: 128))
+        let playButton = UIButton(frame: CGRect(x: 26, y: 217, width: 240, height: 128))
        playButton.addTarget(self, action:#selector(playSystem), for: .touchUpInside)
         playButton.setImage(UIImage(named: "play.png"), for: .normal)
         self.view.addSubview(playButton)//necesario para poder mostrar el botón
         
         //CREAR BOTON DE SETTING
-        let settingsButton = UIButton(frame: CGRect(x: 387, y: 197, width: 240, height: 128))
+        let settingsButton = UIButton(frame: CGRect(x: 387, y: 217, width: 240, height: 128))
         settingsButton.addTarget(self, action:#selector(settingsPressed), for: .touchUpInside)
         settingsButton.setImage(UIImage(named: "settings.png"), for: .normal)
         self.view.addSubview(settingsButton)
