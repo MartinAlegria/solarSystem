@@ -9,34 +9,75 @@
 import UIKit
 import SceneKit
 import ARKit
+import AVFoundation
+import MediaPlayer
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
     let userDef = UserDefaults.standard
-    
+    var audioPlayer = AVAudioPlayer()
+    var audioPlayer2 = AVAudioPlayer()
+    let volumeView = MPVolumeView()
 
     @objc func retPressed(ender: UIButton) {
         let ret = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! menuViewController
         self.present(ret, animated: true, completion: nil)
+        audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        
     }
+    
+
     
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //SPACE ODESY
+        do{
+        audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "spaceOd", ofType: "mp3")!))
+        }catch{
+            print(error)
+        }
+        audioPlayer.prepareToPlay()
+        //AMBIENT
+        do{
+            audioPlayer2 = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "ambient", ofType: "mp3")!))
+        }catch{
+            print(error)
+        }
+        audioPlayer2.prepareToPlay()
+        
+        let vol = userDef.float(forKey: "musicVol")
+        audioPlayer.volume = vol/100
+        print(audioPlayer.volume)
+
         let sizeValue = userDef.object(forKey: "sizeValue") as? Int
         
         switch sizeValue {
         case 0:
+            audioPlayer.play()
+            audioPlayer2.play()
+            audioPlayer2.setVolume(vol/100, fadeDuration: 84)
+            audioPlayer2.numberOfLoops = 20
             setUpPlanetsSML()
             break;
             
         case 1:
+            audioPlayer.play()
+            audioPlayer2.play()
+            audioPlayer2.setVolume(vol/100, fadeDuration: 84)
+            audioPlayer2.numberOfLoops = 20
             setUpPlanetsMED()
+           
             break;
             
         case 2:
+            audioPlayer.play()
+            audioPlayer2.play()
+            audioPlayer2.setVolume(vol/100, fadeDuration: 84)
+            audioPlayer2.numberOfLoops = 20
             setUpPlanetsBIG()
             break;
             
@@ -237,8 +278,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let earthNode = SCNNode()
         earthNode.position = SCNVector3(x:0, y: 0, z: -0.05) //BIG: (x:0, y: 0, z: -0.5)
         earthNode.geometry = earth
-        earthNode.runAction(SCNAction.rotateBy(x: 0, y: 0, z: -0.05, duration: 10))
-        sceneView.scene.rootNode.addChildNode(earthNode)
         
         
         //Moon
@@ -373,6 +412,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let earthNode = SCNNode()
         earthNode.position = SCNVector3(x:0, y: 0, z: -0.05) //BIG: (x:0, y: 0, z: -0.5)
         earthNode.geometry = earth
+        earthNode.name = "Earth"
         sceneView.scene.rootNode.addChildNode(earthNode)
         
         //Moon
@@ -499,4 +539,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
+    
 }

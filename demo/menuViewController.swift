@@ -8,7 +8,7 @@
 
 import UIKit
 
-class menuViewController: UIViewController {    
+class menuViewController: UIViewController {
 
     @objc func playSystem(sender: UIButton) {
         let play = self.storyboard?.instantiateViewController(withIdentifier: "solarSystem") as! ViewController //esto ultimo es el nombre del viewController, en este caso es 'ViewController'
@@ -24,7 +24,6 @@ class menuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         //CREAR BOTON DE PLAY
