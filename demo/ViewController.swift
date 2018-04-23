@@ -111,6 +111,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sunNode.position = SCNVector3(x:15, y: 0, z: -0.5) //BIG: 10 (x:15, y: 0, z: -0.5
         sunNode.geometry = sun
         sceneView.scene.rootNode.addChildNode(sunNode)
+        sunNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.1, z: 0, duration: 1)))
+        
         
         //Mercury
         let mercury = SCNSphere(radius: 0.07) //BIG: 0.07
@@ -123,6 +125,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         mercuryNode.position = SCNVector3(x:2, y: 0, z: -0.5) //BIG (x:2, y: 0, z: -0.5)
         mercuryNode.geometry = mercury
         sceneView.scene.rootNode.addChildNode(mercuryNode)
+        mercuryNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //Venus
         let venus = SCNSphere(radius: 0.198) //BIG = 0.198
@@ -135,6 +138,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         venusNode.position = SCNVector3(x:1, y: 0, z: -0.5) //BIG: (x:1, y: 0, z: -0.5)
         venusNode.geometry = venus
         sceneView.scene.rootNode.addChildNode(venusNode)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: -0.2, z: 0, duration: 1)))
         
         //Earth
         let earth = SCNSphere(radius: 0.2) //BIG: 0.2
@@ -147,6 +151,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         earthNode.position = SCNVector3(x:0, y: 0, z: -0.5) //BIG: (x:0, y: 0, z: -0.5)
         earthNode.geometry = earth
         sceneView.scene.rootNode.addChildNode(earthNode)
+        earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
         
         //Moon
         let moon = SCNSphere(radius: 0.05) //BIG: 0.05
@@ -160,6 +165,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         moonNode.geometry = moon
         
         sceneView.scene.rootNode.addChildNode(moonNode)
+        moonNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //Mars
         let mars = SCNSphere(radius: 0.104) //BIG: (radius: 0.104)
@@ -172,6 +178,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         marsNode.position = SCNVector3(x:-1, y: 0, z: -0.5) //BIG: (x:-1, y: 0, z: -0.5)
         marsNode.geometry = mars
         sceneView.scene.rootNode.addChildNode(marsNode)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //Jupyter
         let jupiter = SCNSphere(radius: 2.25)// BIG: (radius: 2.25)
@@ -184,6 +191,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         jupiterNode.position = SCNVector3(x:-5, y: 0, z: -0.5) //BIG: (x:-5, y: 0, z: -0.5)
         jupiterNode.geometry = jupiter
         sceneView.scene.rootNode.addChildNode(jupiterNode)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //Saturn
         let saturn = SCNSphere(radius: 1.84) //BIG: 1.84
@@ -196,6 +204,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         saturnNode.position = SCNVector3(x:-14, y: 0, z: -0.5)//BIG:(x:-14, y: 0, z: -0.5)
         saturnNode.geometry = saturn
         sceneView.scene.rootNode.addChildNode(saturnNode)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.175, z: 0, duration: 1)))
         
         let rings = SCNTorus(ringRadius: 3.2, pipeRadius:0.2) // BIG: (ringRadius: 3.2, pipeRadius:0.2)
         let ringMat = SCNMaterial()
@@ -205,6 +214,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ringsNode.position = SCNVector3(x:-14, y: 0, z: -0.5)//BIG: (x:-14, y: 0, z: -0.5)
         ringsNode.geometry = rings
         sceneView.scene.rootNode.addChildNode(ringsNode)
+        ringsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.4, z: 0, duration: 1)))
         
         //URANUS
         let uranus = SCNSphere(radius: 0.92) //BIG: 1.84
@@ -217,6 +227,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         uranusNode.position = SCNVector3(x:-24, y: 0, z: -0.5)//BIG:(x:-14, y: 0, z: -0.5)
         uranusNode.geometry = saturn
         sceneView.scene.rootNode.addChildNode(uranusNode)
+        uranusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
         
         //NEPTUNE
         let neptune = SCNSphere(radius: 0.88)
@@ -229,6 +240,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         neptuneNode.position = SCNVector3(x:-34, y: 0, z: -0.5)
         neptuneNode.geometry = neptune
         sceneView.scene.rootNode.addChildNode(neptuneNode)
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
         
         
         sceneView.autoenablesDefaultLighting = true
@@ -245,6 +257,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sunNode.position = SCNVector3(x:1, y: 0, z: -0.12) //BIG: 10 (x:15, y: 0, z: -0.5
         sunNode.geometry = sun
         sceneView.scene.rootNode.addChildNode(sunNode)
+        sunNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.1, z: 0, duration: 1)))
         
         //Mercury
         let mercury = SCNSphere(radius: 0.0175) //BIG: 0.07
@@ -257,6 +270,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         mercuryNode.position = SCNVector3(x:0.375, y: 0, z: 0) //BIG (x:2, y: 0, z: -0.5)
         mercuryNode.geometry = mercury
         sceneView.scene.rootNode.addChildNode(mercuryNode)
+        mercuryNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //Venus
         let venus = SCNSphere(radius: 0.0495) //BIG = 0.198
@@ -269,6 +283,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         venusNode.position = SCNVector3(x:0.2, y: 0, z: -0.05) //BIG: (x:1, y: 0, z: -0.5)
         venusNode.geometry = venus
         sceneView.scene.rootNode.addChildNode(venusNode)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: -0.2, z: 0, duration: 1)))
         
         //Earth
         let earth = SCNSphere(radius: 0.05) //BIG: 0.2
@@ -280,6 +295,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let earthNode = SCNNode()
         earthNode.position = SCNVector3(x:0, y: 0, z: -0.05) //BIG: (x:0, y: 0, z: -0.5)
         earthNode.geometry = earth
+        sceneView.scene.rootNode.addChildNode(earthNode)
+        earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
         
         
         //Moon
@@ -292,8 +309,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let moonNode = SCNNode()
         moonNode.position = SCNVector3(x:0, y:0, z :0.05) // BIG: (x:0, y:0, z :0)
         moonNode.geometry = moon
-        
         sceneView.scene.rootNode.addChildNode(moonNode)
+        moonNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //Mars
         let mars = SCNSphere(radius: 0.026) //BIG: (radius: 0.104)
@@ -306,6 +323,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         marsNode.position = SCNVector3(x:-0.175, y: 0, z: 0) //BIG: (x:-1, y: 0, z: -0.5)
         marsNode.geometry = mars
         sceneView.scene.rootNode.addChildNode(marsNode)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //Jupyter
         let jupiter = SCNSphere(radius: 0.2)// BIG: (radius: 2.25)
@@ -318,6 +336,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         jupiterNode.position = SCNVector3(x:-0.5, y: 0, z: -0.1) //BIG: (x:-5, y: 0, z: -0.5)
         jupiterNode.geometry = jupiter
         sceneView.scene.rootNode.addChildNode(jupiterNode)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //Saturn
         let saturn = SCNSphere(radius: 0.16) //BIG: 1.84
@@ -330,6 +349,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         saturnNode.position = SCNVector3(x:-1.2, y: 0, z: -0.06)//BIG:(x:-14, y: 0, z: -0.5)
         saturnNode.geometry = saturn
         sceneView.scene.rootNode.addChildNode(saturnNode)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
         
         let rings = SCNTorus(ringRadius: 0.3, pipeRadius: 0.018) // BIG: (ringRadius: 3.2, pipeRadius:0.2)
         let ringMat = SCNMaterial()
@@ -339,6 +359,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ringsNode.position = SCNVector3(x:-1.2, y: 0, z: -0.06)//BIG: (x:-14, y: 0, z: -0.5)
         ringsNode.geometry = rings
         sceneView.scene.rootNode.addChildNode(ringsNode)
+        ringsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.4, z: 0, duration: 1)))
         
         //URANUS
         let uranus = SCNSphere(radius: 0.08) //BIG: 1.84
@@ -351,6 +372,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         uranusNode.position = SCNVector3(x:-1.9, y: 0, z: 0)//BIG:(x:-14, y: 0, z: -0.5)
         uranusNode.geometry = uranus
         sceneView.scene.rootNode.addChildNode(uranusNode)
+        uranusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //NEPTUNE
         let neptune = SCNSphere(radius: 0.078)
@@ -363,7 +385,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         neptuneNode.position = SCNVector3(x:-2.6, y:0, z:0)
         neptuneNode.geometry = neptune
         sceneView.scene.rootNode.addChildNode(neptuneNode)
-        
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.1, z: 0, duration: 1)))
         
         sceneView.autoenablesDefaultLighting = true
     }
@@ -379,6 +401,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sunNode.position = SCNVector3(x:0.22, y: 0, z: 0) //BIG: 10 (x:15, y: 0, z: -0.5
         sunNode.geometry = sun
         sceneView.scene.rootNode.addChildNode(sunNode)
+        sunNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.1, z: 0, duration: 1)))
         
         //Mercury
         let mercury = SCNSphere(radius: 0.004375) //BIG: 0.07
@@ -391,6 +414,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         mercuryNode.position = SCNVector3(x:0.125, y: 0, z: -0.04) //BIG (x:2, y: 0, z: -0.5)
         mercuryNode.geometry = mercury
         sceneView.scene.rootNode.addChildNode(mercuryNode)
+        mercuryNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //Venus
         let venus = SCNSphere(radius: 0.012375) //BIG = 0.198
@@ -403,6 +427,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         venusNode.position = SCNVector3(x:0.06, y: 0, z: -0.05) //BIG: (x:1, y: 0, z: -0.5)
         venusNode.geometry = venus
         sceneView.scene.rootNode.addChildNode(venusNode)
+        venusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: -0.2, z: 0, duration: 1)))
         
         //Earth
         let earth = SCNSphere(radius: 0.0125) //BIG: 0.2
@@ -414,8 +439,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let earthNode = SCNNode()
         earthNode.position = SCNVector3(x:0, y: 0, z: -0.05) //BIG: (x:0, y: 0, z: -0.5)
         earthNode.geometry = earth
-        earthNode.name = "Earth"
         sceneView.scene.rootNode.addChildNode(earthNode)
+        earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.3, z: 0, duration: 1)))
+        
         
         //Moon
         let moon = SCNSphere(radius: 0.003125) //BIG: 0.05
@@ -427,8 +453,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let moonNode = SCNNode()
         moonNode.position = SCNVector3(x:0, y:0, z :-0.02) // BIG: (x:0, y:0, z :0)
         moonNode.geometry = moon
-        
         sceneView.scene.rootNode.addChildNode(moonNode)
+        moonNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.1, z: 0, duration: 1)))
         
         //Mars
         let mars = SCNSphere(radius: 0.0065) //BIG: (radius: 0.104)
@@ -441,6 +467,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         marsNode.position = SCNVector3(x: -0.05, y:0, z :-0.05) //BIG: (x:-1, y: 0, z: -0.5)
         marsNode.geometry = mars
         sceneView.scene.rootNode.addChildNode(marsNode)
+        marsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //Jupyter
         let jupiter = SCNSphere(radius: 0.037)// BIG: (radius: 2.25)
@@ -453,6 +480,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         jupiterNode.position = SCNVector3(x: -0.15, y:0, z :-0.05) //BIG: (x:-5, y: 0, z: -0.5)
         jupiterNode.geometry = jupiter
         sceneView.scene.rootNode.addChildNode(jupiterNode)
+        jupiterNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.4, z: 0, duration: 1)))
         
         //Saturn
         let saturn = SCNSphere(radius: 0.033) //BIG: 1.84
@@ -465,6 +493,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         saturnNode.position = SCNVector3(x: -0.32, y:0, z :-0.05)//BIG:(x:-14, y: 0, z: -0.5)
         saturnNode.geometry = saturn
         sceneView.scene.rootNode.addChildNode(saturnNode)
+        saturnNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         let rings = SCNTorus(ringRadius: 0.068, pipeRadius: 0.004) // BIG: (ringRadius: 3.2, pipeRadius:0.2)
         let ringMat = SCNMaterial()
@@ -474,6 +503,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         ringsNode.position = SCNVector3(x: -0.32, y:0, z :-0.05)//BIG: (x:-14, y: 0, z: -0.5)
         ringsNode.geometry = rings
         sceneView.scene.rootNode.addChildNode(ringsNode)
+        ringsNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         //URANUS
         let uranus = SCNSphere(radius: 0.0165) //BIG: 1.84
@@ -486,6 +516,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         uranusNode.position = SCNVector3(x: -0.5, y:0, z :-0.045)//BIG:(x:-14, y: 0, z: -0.5)
         uranusNode.geometry = uranus
         sceneView.scene.rootNode.addChildNode(uranusNode)
+        uranusNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.2, z: 0, duration: 1)))
         
         //NEPTUNE
         let neptune = SCNSphere(radius: 0.0160) //BIG: 1.84
@@ -498,6 +529,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         neptuneNode.position = SCNVector3(x: -0.65, y:0, z :-0.045)//BIG:(x:-14, y: 0, z: -0.5)
         neptuneNode.geometry = neptune
         sceneView.scene.rootNode.addChildNode(neptuneNode)
+        neptuneNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x:0, y: 0.15, z: 0, duration: 1)))
         
         
         

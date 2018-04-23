@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580E899B208E305B00473B17 /* spaceOd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 580E899A208E305B00473B17 /* spaceOd.mp3 */; };
 		584DFF5E204861A60082563B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DFF5D204861A60082563B /* AppDelegate.swift */; };
 		584DFF60204861A60082563B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 584DFF5F204861A60082563B /* art.scnassets */; };
 		584DFF62204861A60082563B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DFF61204861A60082563B /* ViewController.swift */; };
@@ -15,7 +16,6 @@
 		584DFF6A204861A60082563B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584DFF68204861A60082563B /* LaunchScreen.storyboard */; };
 		584DFF75204861A70082563B /* demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DFF74204861A70082563B /* demoTests.swift */; };
 		584DFF80204861A70082563B /* demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584DFF7F204861A70082563B /* demoUITests.swift */; };
-		58614B21208919B600F1165C /* spaceOd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58CFC8652084FA9B005DCE1C /* spaceOd.mp3 */; };
 		58614B22208919B600F1165C /* comet.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58614B1B2089185700F1165C /* comet.mp3 */; };
 		58614B23208919B600F1165C /* rocket.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58614B1C2089185800F1165C /* rocket.mp3 */; };
 		58614B24208919B600F1165C /* scotty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 58614B1E2089185B00F1165C /* scotty.mp3 */; };
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580E899A208E305B00473B17 /* spaceOd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spaceOd.mp3; sourceTree = "<group>"; };
 		584DFF5A204861A60082563B /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584DFF5D204861A60082563B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584DFF5F204861A60082563B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		58614B1F2089185C00F1165C /* time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = time.mp3; sourceTree = "<group>"; };
 		58614B202089185C00F1165C /* ufo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ufo.mp3; sourceTree = "<group>"; };
 		587B0D02207BC35700EFCD16 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
-		58CFC8652084FA9B005DCE1C /* spaceOd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = spaceOd.mp3; path = ../../../../../Downloads/spaceOd.mp3; sourceTree = "<group>"; };
 		58F37681205821EF00E2DFE5 /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				584DFF5D204861A60082563B /* AppDelegate.swift */,
-				58CFC8652084FA9B005DCE1C /* spaceOd.mp3 */,
+				580E899A208E305B00473B17 /* spaceOd.mp3 */,
 				58614B1B2089185700F1165C /* comet.mp3 */,
 				58614B1C2089185800F1165C /* rocket.mp3 */,
 				58614B1E2089185B00F1165C /* scotty.mp3 */,
@@ -262,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58614B21208919B600F1165C /* spaceOd.mp3 in Resources */,
 				58614B22208919B600F1165C /* comet.mp3 in Resources */,
 				58614B23208919B600F1165C /* rocket.mp3 in Resources */,
 				58614B24208919B600F1165C /* scotty.mp3 in Resources */,
@@ -271,6 +270,7 @@
 				58614B27208919B600F1165C /* ambient.mp3 in Resources */,
 				584DFF60204861A60082563B /* art.scnassets in Resources */,
 				584DFF6A204861A60082563B /* LaunchScreen.storyboard in Resources */,
+				580E899B208E305B00473B17 /* spaceOd.mp3 in Resources */,
 				584DFF67204861A60082563B /* assets.xcassets in Resources */,
 				584DFF65204861A60082563B /* Main.storyboard in Resources */,
 			);
