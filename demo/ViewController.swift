@@ -24,6 +24,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.present(ret, animated: true, completion: nil)
         audioPlayer.stop()
         audioPlayer.currentTime = 0
+        audioPlayer2.stop()
+        audioPlayer2.currentTime = 0
         
     }
     
@@ -36,7 +38,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         //SPACE ODESY
         do{
-        audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "spaceOd", ofType: "mp3")!))
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "spaceOd", ofType: "mp3")!))
         }catch{
             print(error)
         }
