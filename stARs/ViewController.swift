@@ -29,8 +29,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let ret = self.storyboard?.instantiateViewController(withIdentifier: "menu") as! menuViewController
         self.present(ret, animated: true, completion: nil)
         audioPlayer.stop()
-        audioPlayer.currentTime = 0
         audioPlayer2.stop()
+        audioPlayer.currentTime = 0
         audioPlayer2.currentTime = 0
         if sfPlayed{
             audioPlayer3.stop()
